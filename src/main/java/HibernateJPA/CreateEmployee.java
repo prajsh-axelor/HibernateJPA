@@ -12,11 +12,14 @@ public class CreateEmployee {
 		EntityManager entitymanager = emfactory.createEntityManager();
 		entitymanager.getTransaction().begin();
 		
-		Employee employee = new Employee(1201,"Prajjwal",65000,"Software Developer");
+		Employee employee = new Employee(12011,"Prajjwal",65000.0,"Software Developer");
 		
-//		entitymanager.persist(employee);
+		entitymanager.persist(employee);
 		
-		entitymanager.merge(employee);
+//		entitymanager.merge(employee);
+		
+		entitymanager.getTransaction().commit();
+		
 		emfactory.close();		
 
 	}
